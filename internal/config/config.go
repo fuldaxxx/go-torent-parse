@@ -13,6 +13,8 @@ type Config struct {
 }
 
 type DBConfig struct {
+	Host     string `yaml:"db_host" env-required:"true"`
+	User     string `yaml:"db_user" env-required:"true"`
 	Name     string `yaml:"db_name" env-required:"true"`
 	Password string `yaml:"db_password" env-required:"true"`
 	Port     string `yaml:"db_port" env-required:"true"`
@@ -31,7 +33,7 @@ func MustLoad() *Config {
 	var cfg Config
 
 	if err := cleanenv.ReadConfig(configPath, &cfg); err != nil {
-		panic("Cant read config file: " + err.Error())
+		panic("Cant read CONFIG FILE: " + err.Error())
 	}
 
 	return &cfg
