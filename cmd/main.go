@@ -13,6 +13,6 @@ func main() {
 
 func initEnv() {
 	if err := godotenv.Load(); err != nil {
-		panic("env file does not loading")
+		panic("env file does not loading: " + err.Error())
 	}
 }
