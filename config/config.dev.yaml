@@ -1,0 +1,7 @@
+db:
+  db_user:
+  db_name:
+  db_password:
+  db_port:
+telegram_api_token:
+fetch_interval:
